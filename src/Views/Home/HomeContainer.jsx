@@ -33,7 +33,8 @@ const HomeContainer = props=>{
                                 <Button  color ="secondary">Obtener Distancia</Button>
                             </CardContent>
                         </Card>
-                        <Grid item xs={12}>
+                    </Grid>
+                    <Grid item xs={12}>
                         <Card className={classes.card}>
                             <CardContent>
                                 <Typography display="block" variant="h6">Distancia en tiempo real</Typography>
@@ -41,7 +42,6 @@ const HomeContainer = props=>{
                                 <Button color ="secondary">Obtener Distancia</Button>
                             </CardContent>
                         </Card>
-                    </Grid>
                     </Grid>
                 </Grid>
             </Container>

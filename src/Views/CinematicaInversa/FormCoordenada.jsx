@@ -18,14 +18,33 @@ const FormCoordenada = props =>{
     const {setTheta11,setTheta12,setTheta21,setTheta22} = props;
     const {theta11,theta21,theta12,theta22} = props;
     const mandarCoordenadas = ()=>{
-
+        let nombreUsuario = localStorage.getItem('nombreUsuarioLocal');
+        let nombreControlador = localStorage.getItem('nombreControlador');
+        if(!nombreUsuario){
+            Swal.fire(
+                'Registrate Primero',
+                '',
+                'error'
+                );
+            return null; 
+        }
+        if(nombreUsuario!==nombreControlador){
+            Swal.fire(
+                'Espera a que dejen el control',
+                '',
+                'error'
+                );
+            return null; 
+        }
+        
         if(!xRef.current.value||!yRef.current.value){
             Swal.fire(
             'Falta datos',
             'Por favor ingrese valores dentre del campo "X" y "Y" para continuar',
             'error'
-        );
-         return null }
+            );
+            return null; 
+        }
         const {theta11,theta12,theta21,theta22} = conseguirAngulos(xRef.current.value,yRef.current.value)
         if(!theta11||!theta21){
             Swal.fire(

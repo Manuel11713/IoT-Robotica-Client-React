@@ -6,15 +6,10 @@ import cssCanvasDirecta from './cssCanvasDirecta';
 
 const styles = makeStyles(cssCanvasDirecta);
 
-
-const theta11 = 0;
-const theta21 = 0;
-const theta12 = 48.18*Math.PI/180;
-const theta22 = 131.82*Math.PI/180;
-
-const CanvasReact = ()=>{
+const CanvasReact =props=>{
     const canvasRef = React.useRef(null)
     const classes = styles();
+    const {theta11,theta21,theta12,theta22 } = props;
     useEffect(()=>{
         dibujarMecanismo(canvasRef,theta11,theta12,theta21,theta22 );
     });
